@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private service: UserService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.service.getUserProfile().subscribe(
       res => {
         this.userDetails = res;
@@ -24,12 +24,12 @@ export class HomeComponent implements OnInit {
   }
 
 
-  onLogout() {
+  onLogout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
 
-  onStudent(){
+  onStudent(): void{
     this.router.navigate(['/students']);
   }
 }

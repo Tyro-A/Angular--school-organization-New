@@ -11,30 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizationComponent implements OnInit {
 
-  constructor(public service: UserService,
-    private toastr: ToastrService) { }
+  constructor(public service: UserService, private toastr: ToastrService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.resetForm();
   }
 
   resetForm(form?: NgForm): void {
-    if (form != null)
+    if (form != null){
       form.form.reset();
+    }
     this.service.OrgformData = {
       organizationId : 0,
       name: '',
       subject: '',
       adviser: '',
-      
-    }
+    };
   }
 
-  onSubmit(form: NgForm) : void{
-    if (this.service.OrgformData.organizationId == 0)
+  onSubmit(form: NgForm): void{
+    if (this.service.OrgformData.organizationId === 0) {
       this.insertRecord(form);
-    else
+    }
+    else {
       this.updateRecord(form);
+    }
   }
 
   insertRecord(form: NgForm): void {
@@ -49,7 +50,7 @@ export class OrganizationComponent implements OnInit {
       }
     )
   }
-  updateRecord(form: NgForm) : void {
+  updateRecord(form: NgForm): void {
     this.service.putOrganizationDetail().subscribe(
       res => {
         this.resetForm(form);

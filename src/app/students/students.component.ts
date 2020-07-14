@@ -22,15 +22,12 @@ organizationDetails;
     // );
   }
 
-  onLogout() {
+  onLogout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
 
-  onHome() {
+  onHome(): void {
     this.router.navigate(['/home']);
   }
-
-
-
 }

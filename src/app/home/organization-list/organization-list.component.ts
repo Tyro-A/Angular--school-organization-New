@@ -1,5 +1,5 @@
-import {Organization} from './../../shared/organization.model';
-import { UserService} from './../../shared/user.service';
+import { Organization } from './../../shared/organization.model';
+import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 })
 export class OrganizationListComponent implements OnInit {
 
-  constructor( public service: UserService,  private toastr: ToastrService, private router: Router) { }
+  constructor(public service: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.refreshOrgList() ;
+    this.service.refreshOrgList();
   }
 
   populateForm(pd: Organization): void {
@@ -33,14 +33,11 @@ export class OrganizationListComponent implements OnInit {
             console.log(err);
             this.toastr.warning('Ooops record is not deleted')
           });
-    }else{
-
     }
-
   }
-  onView(o :Organization)  {
-  this.router.navigateByUrl('/organization-details');
 
+  onView(o: Organization): void {
+    this.router.navigateByUrl('/organization-details');
   }
 
 }

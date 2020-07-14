@@ -12,22 +12,18 @@ import { UserService } from './../shared/user.service';
 })
 export class OrganizationDetailsComponent implements OnInit {
 
-  constructor( public service : UserService,  private toastr: ToastrService, private router: Router) { }
+  constructor( public service: UserService,  private toastr: ToastrService, private router: Router) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
-  
-  onStudent() {
+  onStudent(): void {
     this.router.navigate(['/students']);
   }
-  onHome() {
+  onHome(): void {
     this.router.navigate(['/home']);
   }
-  onLogout() {
+  onLogout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
-
 }

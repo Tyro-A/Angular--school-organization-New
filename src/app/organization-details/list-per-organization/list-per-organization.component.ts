@@ -15,7 +15,7 @@ export class ListPerOrganizationComponent implements OnInit {
   constructor(public service: UserService,  private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.refreshStudList();
+    this.service.refreshStudInOrganizationList(1);
   }
 
 }

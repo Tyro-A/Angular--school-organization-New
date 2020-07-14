@@ -11,16 +11,16 @@ import { NgForm } from '@angular/forms';
 })
 export class StudentComponent implements OnInit {
 
-  constructor(public service : UserService,
-     private toastr : ToastrService) { }
+  constructor(public service: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.resetForm();
 
   }
-  resetForm(form?: NgForm) :void {
-    if (form != null)
+  resetForm(form?: NgForm): void {
+    if (form != null) {
       form.form.reset();
+    }
     this.service.StudformData = {
       id: 0,
       firstName: '',
@@ -28,16 +28,18 @@ export class StudentComponent implements OnInit {
       yearLevel: null,
       course: '',
       organizationId: null
+    };
+  }
+  onSubmit(form: NgForm): void {
+    if (this.service.StudformData.id === 0) {
+      this.insertRecord(form);
+    }
+    else {
+      this.updateRecord(form);
     }
   }
-  onSubmit(form: NgForm) : void{
-    if (this.service.StudformData.id == 0)
-      this.insertRecord(form);
-    else
-      this.updateRecord(form);
-  }
-  
-  insertRecord(form: NgForm) :void{
+
+  insertRecord(form: NgForm): void {
     this.service.postStudentDetail().subscribe(
       res => {
         this.resetForm(form);
@@ -51,7 +53,7 @@ export class StudentComponent implements OnInit {
     )
   }
 
-  updateRecord(form: NgForm) :void{
+  updateRecord(form: NgForm): void {
     this.service.putStudentDetail().subscribe(
       res => {
         this.toastr.info('Updated successfully');
@@ -61,7 +63,7 @@ export class StudentComponent implements OnInit {
       err => {
         console.log(err);
       }
-    )
+    );
   }
 
 }
