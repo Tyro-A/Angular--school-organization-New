@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">IPC- Organization Management</a>
+    <button class="btn btn-warning my-2 offset-7" (click)="onHome()">Back to Home</button>
+    <button class="btn btn-warning my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </nav>
+  
+
+  <!-- <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
+    </ul>
+  </div> -->
+  
+    <!-- <div class="jumbotron jumbotron-fluid" *ngIf="organizationDetails">
+        <h1 class="display-4 text-center">{{organizationDetails.organizationName}}</h1>
+        <p class="lead text-center">{{organizationDetails.adviser}}</p>
+        <p class="lead text-center">{{organizationDetails.relatedSubjects}}</p>
+    </div>
+   -->
+
+   <!-- <div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4 text-center">IPC Organization Management</h1>
+    <p class="lead text-center">The Organizational Management System for the Student of IPC</p>
+  </div> -->
+    <hr>
+    
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+              <app-student></app-student>
+          </div>
+          <div class="col-md-7">
+              <app-student-list></app-student-list>
+          </div>
+      </div>
+    </div>

@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>YearLevel</th>
+        <th>Course</th>
+        <!-- <th>Action</th> -->
+      </tr>
+    <tr *ngFor="let pd of service.StudlistperOrg">
+      <td>{{pd.firstName}}</td>
+      <td>{{pd.lastName}}</td>
+      <td >{{pd.yearLevel}}</td>
+      <td>{{pd.course}}</td>
+      <!-- <td>
+        <button (click)="onDelete(pd.id)" class="btn btn-sm btn-outline-danger">X</button>
+      </td> -->
+    </tr>
+  </table>

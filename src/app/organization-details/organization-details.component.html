@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">IPC- Organization Management</a>
+    <!-- <button class="btn btn-warning my-2 my-sm-0" (click)="onStudent()">Add Student</button> -->
+    <button class="btn btn-warning my-2 offset-7" (click)="onStudent()">Add Student</button>
+    <button class="btn btn-warning my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </nav>
+  
+  
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4 text-center">IPC Organization Management</h1>
+        <p class="lead text-center">The Organizational Management System for the Student of IPC</p>
+    </div>
+  
+    <hr>
+    <router-outlet></router-outlet>
+  <div class="container-fluid">
+        <app-list-per-organization></app-list-per-organization>     
+    </div>
