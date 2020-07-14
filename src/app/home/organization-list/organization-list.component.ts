@@ -39,17 +39,7 @@ export class OrganizationListComponent implements OnInit {
   
   }
   onView(o :Organization) :void {
-    // this.service.getOrganizationId(o.organizationId);
-    // .subscribe(res => {
-    //   this.router.navigateByUrl('/organization-details');
-    // },
-    //   err =>{
-    //     console.log("Unable to get Id")
-    //     this.toastr.warning('Unable to get Organization Id')
-    //   }
-    // )
-      
-    this.router.navigateByUrl('/organization-details');
+  this.router.navigateByUrl('/organization-details');
 
   }
 

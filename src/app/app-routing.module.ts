@@ -30,7 +30,7 @@ const routes: Routes = [
 
   {path: 'organization-details', component: OrganizationDetailsComponent, canActivate:[AuthGuard] },
   
-  { path: 'organization-details/:id', component: OrganizationDetailsComponent}
+  { path: 'organization-list/:id', component: OrganizationListComponent}
 ];
 
 @NgModule({
@@ -38,3 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents =[ OrganizationListComponent ]

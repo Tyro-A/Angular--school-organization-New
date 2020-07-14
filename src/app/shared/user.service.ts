@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Organization } from './organization.model';
 import {Student} from './student.model'
 import { from } from 'rxjs';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +37,6 @@ export class UserService {
 
   comparePasswords(fb: FormGroup) {
     let confirmPswrdCtrl = fb.get('ConfirmPassword');
-    //passwordMismatch
-    //confirmPswrdCtrl.errors={passwordMismatch:true}
     if (confirmPswrdCtrl.errors == null || 'passwordMismatch' in confirmPswrdCtrl.errors) {
       if (fb.get('Password').value != confirmPswrdCtrl.value)
         confirmPswrdCtrl.setErrors({ passwordMismatch: true });
@@ -85,9 +84,6 @@ refreshOrgList(){
   .then(res => this.Orglist = res as Organization[]);
 }
 
-// getValue(formData) {
-//   return this.http.get(this.BaseURI + '/Organizations/' +  formData);
-// }
 
 
 
@@ -104,13 +100,14 @@ refreshStudListInOrg(){
 }
 
 getOrganizationId(organizationId){
-  this.http.get(this.BaseURI +'/Organizations/{id}/students' +organizationId);
+  this.http.get(this.BaseURI +'/Organizations/' +organizationId + '/Students')
+  .toPromise()
+  .then(res => this.StudlistperOrg = res as Student[]) ;
 }
 
 
+
 //Students Functions
-
-
 postStudentDetail() {
   return this.http.post(this.BaseURI + '/Students', this.StudformData);
 }
