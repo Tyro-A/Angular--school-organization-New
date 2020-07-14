@@ -12,17 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentListComponent implements OnInit {
 
-  constructor(public service: UserService,
-    private toastr: ToastrService, private router: Router) { }
+  constructor(public service: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.refreshStudList();
   }
-  populateForm(pd: Student){
+  populateForm(pd: Student): void{
     this.service.StudformData = Object.assign({}, pd);
   }
 
-  onDelete(id: Student) : void {
+  onDelete(id: Student): void {
     if (confirm('Are you sure to delete this record ?')) {
       this.service.deleteStudentDetail(id)
         .subscribe(res => {
@@ -32,13 +31,9 @@ export class StudentListComponent implements OnInit {
           err => {
             console.log(err);
             this.toastr.warning('Not Deleted');
-          })
+          });
     }
-  
+
   }
-
-
-  
-  
 
 }

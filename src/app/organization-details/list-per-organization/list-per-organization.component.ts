@@ -12,10 +12,10 @@ import { Student } from 'src/app/shared/student.model';
 })
 export class ListPerOrganizationComponent implements OnInit {
 
-  constructor(public service : UserService,  private toastr: ToastrService, private router: Router) { }
+  constructor(public service: UserService,  private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getOrganizationId(Organization) ;
+    this.service.refreshStudList();
   }
 
 }
