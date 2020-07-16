@@ -31,7 +31,7 @@ export class OrganizationListComponent implements OnInit {
         },
           err => {
             console.log(err);
-            this.toastr.warning('Ooops record is not deleted')
+            this.toastr.warning('Ooops record is not deleted');
           });
     }
   }

@@ -11,7 +11,7 @@ import { OrganizationListComponent } from './home/organization-list/organization
 import { OrganizationDetailsComponent } from './organization-details/organization-details.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/user/login',pathMatch:'full'},
+  {path: '', redirectTo: '/user/login', pathMatch: 'full'},
   {
     path: 'user', component: UserComponent,
     children: [
@@ -20,17 +20,17 @@ const routes: Routes = [
     ]
   },
   {
-    path:'home',component:HomeComponent,canActivate:[AuthGuard],
+    path: 'home', component: HomeComponent, canActivate: [ AuthGuard ],
     children: [
      { path: 'organization', component: OrganizationComponent },
      { path: 'organization-list', component: OrganizationListComponent }
    ]
 },
-  {path: 'students', component: StudentsComponent, canActivate:[AuthGuard] },
+  {path: 'students', component: StudentsComponent, canActivate: [ AuthGuard ] },
 
-  {path: 'organization-details', component: OrganizationDetailsComponent, canActivate:[AuthGuard] },
-  
-  { path: 'organization-list/:id', component: OrganizationListComponent}
+  {path: 'organization-details', component: OrganizationDetailsComponent, canActivate: [ AuthGuard ] },
+
+  { path: 'organization-list/:id/students', component: OrganizationListComponent}
 ];
 
 @NgModule({
@@ -38,4 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents =[ OrganizationListComponent ]
+export const routingComponents = [ OrganizationListComponent ]

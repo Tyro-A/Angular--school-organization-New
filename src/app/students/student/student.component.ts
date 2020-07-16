@@ -50,7 +50,7 @@ export class StudentComponent implements OnInit {
         this.toastr.warning('No record added check the input');
         console.log(err);
       }
-    )
+    );
   }
 
   updateRecord(form: NgForm): void {

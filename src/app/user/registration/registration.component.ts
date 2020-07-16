@@ -25,12 +25,12 @@ export class RegistrationComponent implements OnInit {
           res.errors.forEach(element => {
             switch (element.code) {
               case 'DuplicateUserName':
-                this.toastr.error('Username is already taken','Registration failed.');
+                this.toastr.error('Username is already taken', 'Registration failed.');
                 break;
 
               default:
-              this.toastr.error(element.description,'Registration failed.');
-                break;
+              this.toastr.error(element.description, 'Registration failed.');
+              break;
             }
           });
         }

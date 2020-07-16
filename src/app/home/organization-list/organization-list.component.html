@@ -3,7 +3,7 @@
         <th>Id</th>      
         <th>Organization</th>
         <th>Adviser</th>
-        <th>Related Subject</th>
+        <th>Subject</th>
         <th>Action</th>
       </tr>
     <tr *ngFor="let pd of service.Orglist">
@@ -13,7 +13,7 @@
       <td (click)="populateForm(pd)">{{pd.subject}}</td>
       <td>
         <button (click)="onDelete(pd.organizationId)" class="btn btn-sm btn-outline-danger">Delete</button>
-        <button (click)="onView(pd.organizationId)" class="btn btn-sm btn-outline-success offset-1">View</button>
+        <button (click)="onView(pd.organizationId)" class="btn btn-sm btn-outline-success offset-1" >View</button>
         <!-- <a routerLink="/organization-details/{{pd.organizationId}}/students" class="btn btn-sm btn-outline-success offset-1">View</a> -->
       </td>
     </tr>
