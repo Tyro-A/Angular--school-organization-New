@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">IPC- Organization Management | </a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/studentpanel">Student</a>
+        </li>
+      </ul>
+    <button class="btn btn-warning my-2 offset-3" (click)="onHome()">Back to Home</button>
+    <button class="btn btn-warning my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </nav>
+  
+  
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4 text-center">IPC Organization Management</h1>
+        <p class="lead text-center">The Organizational Management System for the Student of IPC</p>
+    </div>
+  
+    <hr>
+
+    <div class="container-fluid text-center">
+        <table class="table table-hover">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>YearLevel</th>
+                <th>Course</th>
+                <th>Organization Id</th>
+              </tr>
+            <tr *ngFor="let pd of service.Studlist">
+              <td>{{pd.firstName}}</td>
+              <td>{{pd.lastName}}</td>
+              <td >{{pd.yearLevel}}</td>
+              <td>{{pd.course}}</td>
+              <td>{{pd.organizationId}}</td>
+            </tr>
+          </table>    
+    </div>

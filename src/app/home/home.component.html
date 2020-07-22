@@ -1,32 +1,43 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">IPC- Organization Management</a>
-  <button class="btn btn-warning my-2 offset-7" (click)="onStudent()">Add Students</button>
+  <a class="navbar-brand text-white">IPC- Organization Management | </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/studentpanel">Student</a>
+      </li>
+    </ul>
+  <button class="btn btn-warning my-2 offset-3" (click)="onView()">View List</button>
   <button class="btn btn-warning my-2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
 
-
-
-<!-- <div class="card m-5" style="width:18rem" *ngIf="userDetails">
-  <ul class="list-group">
-    <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
-    <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
-  </ul>
-</div> -->
-
+<div class="container-fluid">
   <div class="jumbotron jumbotron-fluid">
-      <h1 class="display-4 text-center">IPC Organization Management</h1>
-      <p class="lead text-center">The Organizational Management System for the Student of IPC</p>
+    <h1 class="display-4 text-center">IPC Organization Management</h1>
+    <p class="lead text-center">The Organizational Management System for the Student of IPC</p>
   </div>
+</div>
+
+<div class="container-fluid">
+    <h3 class="text-center">List of Organizations</h3>
+    <div class="text-center">
+    <app-student-organization-list></app-student-organization-list>
+  </div>
+</div>
 
   <hr>
   <div class="container-fluid">
+    <h3 class="text-center" style="padding-top: 50px; margin-bottom: 40px;">Add your Information here</h3>
       <div class="row">
         <router-outlet></router-outlet>
-        <div class="col-md-5">
-            <app-organization></app-organization>
+        <div class="col-md-5 ">
+          <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+              <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-md-7">
-            <app-organization-list></app-organization-list>
+        <div class="col-md-6">
+             <app-student></app-student>
         </div>
     </div>
   </div>

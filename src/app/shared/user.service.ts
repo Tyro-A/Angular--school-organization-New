@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Organization } from './organization.model';
-import { Student } from './student.model'
-import { from } from 'rxjs';
-import { asLiteral } from '@angular/compiler/src/render3/view/util';
+import { Student } from './student.model';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +45,7 @@ export class UserService {
     }
   }
 
-  register() {
+  register(){
     const body = {
       UserName: this.formModel.value.UserName,
       Email: this.formModel.value.Email,
@@ -66,6 +64,21 @@ export class UserService {
   getUserProfile() {
     return this.http.get(this.BaseURI + '/UserProfile');
   }
+
+  roleMatch(allowedRoles): boolean {
+    var isMatch = false;
+    var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    var userRole = payLoad.role;
+    allowedRoles.forEach(element => {
+      if (userRole == element) {
+        isMatch = true;
+        return false;
+      }
+    });
+    return isMatch;
+  }
+
+
 
   // Organization Functions
 

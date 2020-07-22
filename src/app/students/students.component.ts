@@ -28,6 +28,6 @@ organizationDetails;
   }
 
   onHome(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/adminpanel']);
   }
 }

@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styles: []
+  selector: 'app-admin-panel',
+  templateUrl: './admin-panel.component.html',
+  styles: [
+  ]
 })
-export class HomeComponent implements OnInit {
+export class AdminPanelComponent implements OnInit {
   userDetails;
-
   constructor(private router: Router, private service: UserService) { }
 
   ngOnInit(): void {
@@ -23,13 +23,15 @@ export class HomeComponent implements OnInit {
     );
   }
 
-
   onLogout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
 
-  onView(): void{
-    this.router.navigate(['/studentList']);
+  onStudent(): void{
+    this.router.navigate(['/students']);
   }
+
+
+
 }

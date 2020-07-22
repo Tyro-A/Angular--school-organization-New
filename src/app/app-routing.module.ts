@@ -9,6 +9,9 @@ import { StudentsComponent } from './students/students.component';
 import { OrganizationComponent } from './home/organization/organization.component';
 import { OrganizationListComponent } from './home/organization-list/organization-list.component';
 import { OrganizationDetailsComponent } from './organization-details/organization-details.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { StudentsListComponent } from './home/students-list/students-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/user/login', pathMatch: 'full'},
@@ -19,18 +22,24 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent }
     ]
   },
-  {
-    path: 'home', component: HomeComponent, canActivate: [ AuthGuard ],
-    children: [
-     { path: 'organization', component: OrganizationComponent },
-     { path: 'organization-list', component: OrganizationListComponent }
-   ]
-},
+
+  { path: 'studentpanel', component: HomeComponent, canActivate: [ AuthGuard ]},
+
+  {path: 'organization', component: OrganizationComponent},
+
+  {path: 'organization-list', component: OrganizationListComponent},
+
   {path: 'students', component: StudentsComponent, canActivate: [ AuthGuard ] },
 
   {path: 'organization-details', component: OrganizationDetailsComponent, canActivate: [ AuthGuard ] },
 
-  { path: 'organization-list/:id/students', component: OrganizationListComponent}
+  { path: 'organization-list/:id', component: OrganizationListComponent},
+
+  {path: 'forbidden', component: ForbiddenComponent},
+
+  {path: 'studentList', component: StudentsListComponent},
+
+  {path: 'adminpanel', component: AdminPanelComponent, canActivate: [ AuthGuard ], data: {permittedRoles: ['Admin']} },
 ];
 
 @NgModule({
@@ -38,4 +47,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ OrganizationListComponent ]
+export const routingComponents = [ OrganizationListComponent ];

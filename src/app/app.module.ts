@@ -20,6 +20,11 @@ import { StudentComponent } from './students/student/student.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { OrganizationDetailsComponent } from './organization-details/organization-details.component';
 import { ListPerOrganizationComponent } from './organization-details/list-per-organization/list-per-organization.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { StudentOrganizationListComponent } from './home/student-organization-list/student-organization-list.component';
+import { StudentInformationComponent } from './home/student-information/student-information.component';
+import { StudentsListComponent } from './home/students-list/students-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { ListPerOrganizationComponent } from './organization-details/list-per-or
     StudentComponent,
     StudentListComponent,
     OrganizationDetailsComponent,
-    ListPerOrganizationComponent
+    ListPerOrganizationComponent,
+    AdminPanelComponent,
+    ForbiddenComponent,
+    StudentOrganizationListComponent,
+    StudentInformationComponent,
+    StudentsListComponent
   ],
   imports: [
     BrowserModule,
