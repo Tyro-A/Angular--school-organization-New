@@ -17,7 +17,7 @@ export class OrganizationDetailsComponent implements OnInit {
   ngOnInit(): void { }
 
   onStudent(): void {
-    this.router.navigate(['/students']);
+    this.router.navigate(['/addstudents']);
   }
   onHome(): void {
     this.router.navigate(['/home']);

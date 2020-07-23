@@ -29,7 +29,7 @@ export class AdminPanelComponent implements OnInit {
   }
 
   onStudent(): void{
-    this.router.navigate(['/students']);
+    this.router.navigate(['/addstudents']);
   }
 
 

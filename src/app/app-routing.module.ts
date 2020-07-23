@@ -29,7 +29,7 @@ const routes: Routes = [
 
   {path: 'organization-list', component: OrganizationListComponent},
 
-  {path: 'students', component: StudentsComponent, canActivate: [ AuthGuard ] },
+  {path: 'addstudents', component: StudentsComponent, canActivate: [ AuthGuard ] },
 
   {path: 'organization-details/:id', component: OrganizationDetailsComponent, canActivate: [ AuthGuard ] },
 

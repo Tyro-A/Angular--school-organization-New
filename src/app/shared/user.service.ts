@@ -102,7 +102,6 @@ export class UserService {
 
 
 
-
   // Displays Details for organization
   getOrganizationDetails() {
     return this.http.get(this.BaseURI + '/Organizations');

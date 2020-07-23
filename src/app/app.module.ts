@@ -44,7 +44,7 @@ import { StudentsListComponent } from './home/students-list/students-list.compon
     ForbiddenComponent,
     StudentOrganizationListComponent,
     StudentInformationComponent,
-    StudentsListComponent
+    StudentsListComponent,
   ],
   imports: [
     BrowserModule,
