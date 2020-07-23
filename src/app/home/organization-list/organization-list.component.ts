@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-organization-list',
   templateUrl: './organization-list.component.html',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class OrganizationListComponent implements OnInit {
 
+ 
   constructor(public service: UserService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class OrganizationListComponent implements OnInit {
     }
   }
 
-  onView(o: Organization): void {
+  onView(organizationId: Organization): void{
     this.router.navigateByUrl('/organization-details');
   }
 

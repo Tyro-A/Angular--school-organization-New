@@ -108,8 +108,8 @@ export class UserService {
     return this.http.get(this.BaseURI + '/Organizations');
   }
 
-  refreshStudListInOrg(): void {
-    this.http.get(this.BaseURI + '/Organizations')
+  refreshStudListInOrg(OrgId): void {
+    this.http.get(this.BaseURI + '/Organizations' + OrgId)
       .toPromise()
       .then(res => this.StudlistperOrg = res as Student[]);
   }

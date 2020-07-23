@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../shared/user.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Organization } from 'src/app/shared/organization.model';
 import { Student } from 'src/app/shared/student.model';
 
@@ -12,10 +12,12 @@ import { Student } from 'src/app/shared/student.model';
 })
 export class ListPerOrganizationComponent implements OnInit {
 
-  constructor(public service: UserService,  private toastr: ToastrService, private router: Router) { }
+  data =" ";
+  constructor(public service: UserService,  private toastr: ToastrService, private router: Router, private arouter: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.refreshStudInOrganizationList(2);
+    this.service.refreshStudInOrganizationList(this.arouter.snapshot.params.id);
+    this.data = this.arouter.snapshot.params.id;
   }
 
 }

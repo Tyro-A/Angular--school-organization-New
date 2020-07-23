@@ -13,8 +13,8 @@
       <td (click)="populateForm(pd)">{{pd.subject}}</td>
       <td>
         <button (click)="onDelete(pd.organizationId)" class="btn btn-sm btn-outline-danger">Delete</button>
-        <button (click)="onView(pd.organizationId)" class="btn btn-sm btn-outline-success offset-1" >View</button>
-        <!-- <a routerLink="/organization-details/{{pd.organizationId}}/students" class="btn btn-sm btn-outline-success offset-1">View</a> -->
+        <!-- <button (click)="onView(pd.organizationId)" class="btn btn-sm btn-outline-success offset-1" >View</button> -->
+        <a routerLink="/organization-details/{{pd.organizationId}}"  class="btn btn-sm btn-outline-success offset-1">View</a>
       </td>
     </tr>
   </table>

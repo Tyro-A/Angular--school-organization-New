@@ -31,6 +31,8 @@ const routes: Routes = [
 
   {path: 'students', component: StudentsComponent, canActivate: [ AuthGuard ] },
 
+  {path: 'organization-details/:id', component: OrganizationDetailsComponent, canActivate: [ AuthGuard ] },
+
   {path: 'organization-details', component: OrganizationDetailsComponent, canActivate: [ AuthGuard ] },
 
   { path: 'organization-list/:id', component: OrganizationListComponent},
