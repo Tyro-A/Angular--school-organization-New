@@ -13,14 +13,6 @@ export class AdminPanelComponent implements OnInit {
   constructor(private router: Router, private service: UserService) { }
 
   ngOnInit(): void {
-    this.service.getUserProfile().subscribe(
-      res => {
-        this.userDetails = res;
-      },
-      err => {
-        console.log(err);
-      },
-    );
   }
 
   onLogout(): void {

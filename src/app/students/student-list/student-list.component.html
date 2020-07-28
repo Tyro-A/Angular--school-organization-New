@@ -7,6 +7,7 @@
         <th>LastName</th>
         <th>YearLevel</th>
         <th>Course</th>
+        <th>Organization Id</th>
         <th>Action</th>
       </tr>
     <tr *ngFor="let pd of service.Studlist">
@@ -14,6 +15,7 @@
       <td (click)="populateForm(pd)">{{pd.lastName}}</td>
       <td (click)="populateForm(pd)">{{pd.yearLevel}}</td>
       <td (click)="populateForm(pd)">{{pd.course}}</td>
+      <td (click)="populateForm(pd)">{{pd.organizationId}}</td>
       <td>
         <button (click)="onDelete(pd.id)" class="btn btn-sm btn-outline-danger">X</button>
       </td>

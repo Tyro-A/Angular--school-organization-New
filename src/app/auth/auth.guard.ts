@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from '../shared/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { UserService } from '../shared/user.service';
 export class AuthGuard implements CanActivate {
 
 
-  constructor(private router: Router, private service: UserService) {
+  constructor(private router: Router, private service: UserService, private toastr: ToastrService) {
   }
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -21,7 +22,7 @@ export class AuthGuard implements CanActivate {
            return true;
           }
         else{
-          this.router.navigate(['/studentpanel']);
+          this.toastr.error('Your not able to use that role', 'Unauthorized');
           return false; }
       }
       return true;

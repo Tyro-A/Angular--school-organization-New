@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   formModel = {
     UserName: '',
-    Password: ''
+    Password: '',
+    Role: '',
   };
   constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }
 
@@ -26,10 +27,13 @@ export class LoginComponent implements OnInit {
     this.service.login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
-        if (this.formModel.UserName == 'anjorie2413'){
+        if (this.formModel.Role == 'Admin'){
           this.router.navigateByUrl('/adminpanel');
-        }else{
+        }
+        else if (this.formModel.Role == 'Student'){
           this.router.navigateByUrl('/studentpanel');
+        }else{
+          this.router.navigateByUrl('/forbidden');
         }
 
       },

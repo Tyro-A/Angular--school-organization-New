@@ -3,27 +3,27 @@
   <form #form="ngForm"  (submit)="onSubmit(form)" autocomplete="off">
     <div class="form-group">
         <label>First Name</label>
-        <input name="FirstName" #FirstName ="ngModel" [(ngModel)] ="service.StudformData.firstName" class="form-control" required>
+        <input placeholder ="Enter first name" name="FirstName" #FirstName ="ngModel" [(ngModel)] ="service.StudformData.firstName" class="form-control" required>
         <div class="text-danger" *ngIf="FirstName.invalid && FirstName.touched">Please enter first name</div>   
     </div>
     <div class="form-group">
         <label>Last Name</label>
-        <input name="LastName" #LastName ="ngModel" [(ngModel)] ="service.StudformData.lastName" class="form-control" required>
+        <input placeholder ="Enter last name" name="LastName" #LastName ="ngModel" [(ngModel)] ="service.StudformData.lastName" class="form-control" required>
         <div class="text-danger" *ngIf="LastName.invalid && LastName.touched">Please enter last name</div>   
     </div>
     <div class="form-group">
         <label>Year Level</label>
-        <input name="YearLevel" #YearLevel ="ngModel" [(ngModel)] ="service.StudformData.yearLevel" class="form-control" required>
+        <input placeholder ="Enter year level" name="YearLevel" #YearLevel ="ngModel" [(ngModel)] ="service.StudformData.yearLevel" class="form-control" required>
         <div class="text-danger" *ngIf="YearLevel.invalid && YearLevel.touched">Please enter year level</div>   
     </div>
     <div class="form-group">
         <label>Course</label>
-        <input name="Course" #Course ="ngModel" [(ngModel)] ="service.StudformData.course" class="form-control" required>
+        <input placeholder ="Enter course" name="Course" #Course ="ngModel" [(ngModel)] ="service.StudformData.course" class="form-control" required>
         <div class="text-danger" *ngIf="Course.invalid && Course.touched">Please enter course</div>   
     </div>
     <div class="form-group">
         <label>Organization</label>
-        <input name="OrganizationId" #OrganizationId ="ngModel" [(ngModel)] ="service.StudformData.organizationId" class="form-control" required>
+        <input placeholder ="Enter organization Id" name="OrganizationId" #OrganizationId ="ngModel" [(ngModel)] ="service.StudformData.organizationId" class="form-control" required>
         <div class="text-danger" *ngIf="OrganizationId.invalid && OrganizationId.touched">Please enter organization</div>   
     </div>
     <div class="form-group">
