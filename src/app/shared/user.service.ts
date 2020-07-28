@@ -80,11 +80,7 @@ export class UserService {
     return isMatch;
   }
 
-
-
   // Organization Functions
-
-
   postOrganizationDetail() {
     return this.http.post(this.rootURI + '/Organizations', this.OrgformData);
   }

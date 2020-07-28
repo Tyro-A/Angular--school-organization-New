@@ -23,7 +23,7 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'studentpanel', component: HomeComponent, canActivate: [ AuthGuard ]},
+  { path: 'studentpanel', component: HomeComponent, canActivate: [ AuthGuard ], data: {permittedRoles: ['Student']} },
 
   {path: 'organization', component: OrganizationComponent},
 

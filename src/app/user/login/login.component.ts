@@ -30,10 +30,8 @@ export class LoginComponent implements OnInit {
         if (this.formModel.Role == 'Admin'){
           this.router.navigateByUrl('/adminpanel');
         }
-        else if (this.formModel.Role == 'Student'){
+        else{
           this.router.navigateByUrl('/studentpanel');
-        }else{
-          this.router.navigateByUrl('/forbidden');
         }
 
       },
